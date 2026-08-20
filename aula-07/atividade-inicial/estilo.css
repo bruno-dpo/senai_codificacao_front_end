@@ -1,0 +1,143 @@
+body {
+    background-color: #f6f8fc;
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding-top: 160px;
+    h1, h2, h3 {
+    color: #7A2E1E;
+}
+
+#topo h1 {
+    color: white;
+}
+}
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 16px;
+}
+.grade {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  
+}
+.etiqueta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #C0392B;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    position: relative;
+}
+
+#topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #7A2E1E;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 100;
+}
+.botao {
+    display: inline-block;
+    background-color: #7A2E1E;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.botao:hover {
+    background-color: #C0392B;
+    transition: 0.3s;
+}
+.botao-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+#banner{
+    background-color: #F8E8D8;
+    padding:50px 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#banner h2 {
+    font-size: 32px;
+}
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.destaque {
+    border: 3px solid #C65D21;
+    background-color: #FFF3E6;
+}
+.formulario {
+    background-color: #FFF3E6;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 30px;
+}
+.campo{
+    margin-bottom: 20px;
+}
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+.campo input, .campo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.footer{
+    background-color: #3B2A24;;
+    color: #F8F1E7;
+    text-align: center;
+    padding: 30px;
+}
+footer a {
+    color: #F8F1E7;
+}
+.botao-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
