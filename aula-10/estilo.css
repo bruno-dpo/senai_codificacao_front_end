@@ -1,269 +1,105 @@
-/* ===== FASE 3 · ESTILO BASE ===== */
+/* estilo.css inicial — a cor #0570b5 aparece REPETIDA de propósito.
+   Passo 1 da atividade: criem o :root e troquem tudo por var(). */
+
+:root {
+  
+/*cores*/
+
+  --cor-primaria: green;
+
+  --cor-secundaria: blue;
+
+  --cor-texto: white;
+/*fonte*/
+  --fonte-principal: arial;
+/*espaçamento padrao*/
+  --espacamento-padrao: 20px;
+/*borda*/
+  --raio-borda:10px;
+}
+
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: rgb(0, 0, 0);
-    background-color: #f5f5f5;
-    margin: 0;
+  font-family:var(--fonte-principal);
+  background-color: #f4f4f4;
+  color: #333333;
 }
 
-h1,
-h2 {
-    color: rgb(0, 0, 0);
+.header {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 15px;
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.6;
+.nav-menu ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+.nav-menu a {
+  color: white;
+  text-decoration: none;
 }
 
-/* ===== FASE 4 · CABEÇALHO E MENU ===== */
-#topo {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-    padding: 24px 0;
+.banner {
+  background-color: var(--cor-secundaria);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
 }
 
-#topo h1 {
-    color: #ffffff;
-    margin: 0 0 8px;
-    text-align: center;
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 10px;
 }
 
-.subtitulo {
-    text-align: center;
-    margin: 0 0 20px;
-    color: #dddddd;
+.product-card {
+  background-color:var(--cor-primaria);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
 }
 
-.menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+.btn-primary {
+  background-color: #0570b5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.menu a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 8px 14px;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
+.btn-primary:hover {
+  transform: scale(1.1);
 }
 
-.menu a:hover {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* ===== SEÇÕES ===== */
-.secao {
-    padding: 48px 0;
+.banner {
+  animation: fadeIn 1s ease-in;
 }
 
-.secao:nth-of-type(even) {
-    background-color: #ffffff;
-}
-
-/* FASE 7 · ID ÚNICO (#inicio / hero) */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-        url("img/brigadeiro.jpg") center / cover no-repeat;
-    color: #ffffff;
-    text-align: center;
-    padding: 80px 0;
-}
-
-.hero h2,
-.hero p {
-    color: #ffffff;
-}
-
-.etiqueta {
-    display: inline-block;
-    background-color: #d35400;
-    color: #ffffff;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-
-/* ===== FASE 5 · CARDS ===== */
-.lista-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin: 32px auto;
-    max-width: 700px;
-}
-
-.card {
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.card.destaque {
-    border: 2px solid #d35400;
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 16px;
-}
-
-.card h4 {
-    margin: 16px 0 8px;
-    font-size: 1rem;
-}
-
-.card ul,
-.card ol {
-    margin: 0 0 12px;
-    padding-left: 20px;
-    font-size: 15px;
-}
-
-.descricao {
-    margin-bottom: 12px;
-}
-
-/* FASE 6 · BOX MODEL: testem padding, margin e border no .card */
-
-/* FASE 7 · CLASSES .preco e .botao */
-.preco {
-    color: #d35400;
-    font-weight: bold;
-    font-size: 1.25rem;
-}
-
-.botao {
-    background-color: #d35400;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
-/* DESAFIO OPCIONAL · :hover */
-.botao:hover {
-    background-color: #a04000;
-}
-
-.card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== FASE 8 · TABELA ===== */
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 24px;
-}
-
-.tabela th,
-.tabela td {
-    border: 1px solid #dddddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.tabela thead {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-}
-
-/* ===== FASE 8 · GALERIA ===== */
-.galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 32px;
-}
-
-.item-galeria {
-    margin: 0;
-    text-align: center;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    padding: 12px;
-    width: 300px;
-}
-
-.item-galeria img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-/* ===== FASE 8 · CONTATO ===== */
-.formulario {
-    max-width: 500px;
-    margin-top: 24px;
-    background-color: #ffffff;
-    padding: 24px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-}
-
-.grupo-formulario {
-    margin-bottom: 16px;
-}
-
-.grupo-formulario label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.grupo-formulario input,
-.grupo-formulario select,
-.grupo-formulario textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
-/* ===== RODAPÉ (TODAS AS PÁGINAS) ===== */
-.rodape {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-    text-align: center;
-    padding: 24px 0;
-}
-
-.rodape a {
-    color: #d35400;
-    text-decoration: none;
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
