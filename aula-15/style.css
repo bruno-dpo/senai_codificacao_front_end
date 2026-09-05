@@ -1,0 +1,14 @@
+body { 
+ font-family: Arial, sans-serif; 
+ background: #f1f4f8; 
+} 
+#lista-produtos li { 
+ padding: 8px; 
+ margin-bottom: 4px; 
+ background: #ffffff; 
+ border-radius: 4px; 
+ cursor: pointer; 
+} 
+.favorito { 
+ background: #ffe9b3; 
+}
